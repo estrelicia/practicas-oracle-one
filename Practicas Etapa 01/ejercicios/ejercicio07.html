@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Diseñando una Flor</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+<script>
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "#F0F0F0";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCirculo(x, y, radio, color) {
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2*3.14);
+        pincel.fill();
+    } 
+    function dibujarFlor(x,y){
+    dibujarCirculo(x, y, 10, "red");
+    dibujarCirculo(x, y-20, 10, "yellow");
+    dibujarCirculo(x-20, 200, 10, "orange");
+    dibujarCirculo(x, y+20, 10, "blue");
+    dibujarCirculo(x+20, 200, 10, "black");
+    }
+    dibujarFlor(400,200);
+
+</script>
+    <p><a href="../index.html"><strong>volver al inicio</strong></a></p>
+</body>
+</html>
